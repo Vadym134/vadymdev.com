@@ -1,115 +1,258 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name='freelancehunt' content='5524bc3435f3c77'>
-  <title>Vadym Dev - Resume</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: #121212;
-      color: #e0e0e0;
-      line-height: 1.6;
-      padding: 40px;
-    }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Vadym — Portfolio</title>
 
-    .container {
-      max-width: 800px;
-      margin: auto;
-      background-color: #1e1e1e;
-      padding: 40px;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.5);
-    }
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    h1 {
-      margin-top: 0;
-      font-size: 2.5em;
-      color: #ffffff;
-    }
+  <!-- Основной CSS (положи рядом файл style.css) -->
+  <link rel="stylesheet" href="style.css">
 
-    h2 {
-      border-bottom: 1px solid #333;
-      padding-bottom: 5px;
-      margin-top: 40px;
-      color: #ffffff;
-    }
-
-    a {
-      color: #90caf9;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .profile-pic {
-      max-width: 180px;
-      border-radius: 8px;
-      margin-bottom: 20px;
-      box-shadow: 0 0 10px rgba(255,255,255,0.1);
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    .section {
-      margin-bottom: 30px;
-    }
-
-    .skills-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .skill {
-      background-color: #2c2c2c;
-      padding: 8px 12px;
-      border-radius: 6px;
-      font-size: 0.9em;
-      color: #ffffff;
-      border: 1px solid #3a3a3a;
-    }
-  </style>
+  <!-- NOTE: поменяй favicon, если нужно -->
 </head>
 <body>
-  <div class="container">
-    <img src="Img/c5c1ceb3-0be6-4085-82d4-8da8b2daafa8.jfif" alt="Vadym's Photo" class="profile-pic">
-    <h1>Vadym Poliesovoi</h1>
 
-    <div class="section">
-      <p>I'm a motivated and ambitious beginner developer who's decided to build a life in programming. I love challenges, learn fast, and take pride in creating things rather than just observing. Constant growth is my baseline, not my goal. 🚀</p>
+  <!-- =========================
+       Site Header
+       - Имя, короткий слоган
+       - Здесь менять: .site-title и .site-tagline
+     ========================= -->
+  <header class="site-header">
+    <div class="container">
+      <!-- Название: поменяй "Vadym" если потребуется -->
+      <h1 class="site-title">Vadym</h1>
+      <!-- Короткий слоган: редактируй здесь -->
+      <p class="site-tagline">Crafting clear, modern web experiences</p>
     </div>
+  </header>
 
-    <div class="section">
-      <h2>Experience</h2>
-      <ul>
-        <li>I am studying frontend development</li>
-        <li>Work with HTML and also learning Git, CSS and JavaScript</li>
-      </ul>
-    </div>
+  <!-- =========================
+       Главный контент
+     ========================= -->
+  <main role="main">
 
-    <div class="section">
-      <h2>Skills</h2>
-      <div class="skills-list">
-        <div class="skill">HTML</div>
-        <div class="skill">CSS</div>
-        <div class="skill">Git</div>
-        <div class="skill">Responsive Layout</div>
-        <div class="skill">JavaScript (Learning)</div>
+    <!-- =========================
+         Services Section
+         - Шаблон для услуг. Пока пусто — вставишь карточки позже.
+         - Комментарии ниже подскажут как добавлять пункт услуги.
+       ========================= -->
+    <section id="services" class="section services">
+      <div class="container">
+        <h2 class="section-title">Services</h2>
+
+        <!--
+          Пример структуры карточки услуги:
+          <article class="service-card">
+            <h3>Service title</h3>
+            <p>Short description...</p>
+          </article>
+
+          Для добавления: копируй <article class="service-card"> ... </article>
+        -->
+        <div class="services-grid" aria-hidden="true">
+          <!-- PLACEHOLDER: Добавь сюда реальные карточки позже -->
+          <!-- Пример пробного блока (удали или замени) -->
+          <article class="service-card">
+            <h3>Web Design</h3>
+            <p class="muted">Add a short description of this service here.</p>
+          </article>
+
+          <article class="service-card">
+            <h3>Frontend Development</h3>
+            <p class="muted">Placeholder — replace with actual offering.</p>
+          </article>
+
+          <article class="service-card">
+            <h3>UI Improvements</h3>
+            <p class="muted">Placeholder — replace with actual offering.</p>
+          </article>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <div class="section">
-      <h2>Contacts</h2>
-      <p>📧 Email: <a href="mailto:poliesovoi.vadym@gmail.com">poliesovoi.vadym@gmail.com</a></p>
-      <p>💬 Telegram: <a href="https://web.telegram.org/k/#@nature_flips" target="_blank">@nature_flips</a></p>
+    <!-- =========================
+         Portfolio Section
+         - Сетка для демонстрации работ.
+         - Для каждой работы используй .portfolio-item (img + caption)
+       ========================= -->
+    <section id="portfolio" class="section portfolio">
+      <div class="container">
+        <h2 class="section-title">Portfolio</h2>
+
+        <div class="portfolio-grid" aria-hidden="true">
+          <!-- PLACEHOLDER items (замени картинками/ссылками на проект) -->
+          <figure class="portfolio-item">
+            <img src="https://via.placeholder.com/600x380?text=Project+1" alt="Project 1 preview">
+            <figcaption class="muted">Project 1 — short note</figcaption>
+          </figure>
+
+          <figure class="portfolio-item">
+            <img src="https://via.placeholder.com/600x380?text=Project+2" alt="Project 2 preview">
+            <figcaption class="muted">Project 2 — short note</figcaption>
+          </figure>
+
+          <figure class="portfolio-item">
+            <img src="https://via.placeholder.com/600x380?text=Project+3" alt="Project 3 preview">
+            <figcaption class="muted">Project 3 — short note</figcaption>
+          </figure>
+
+          <figure class="portfolio-item">
+            <img src="https://via.placeholder.com/600x380?text=Project+4" alt="Project 4 preview">
+            <figcaption class="muted">Project 4 — short note</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         Testimonials Section
+         - Место для отзывов клиентов. Оставлено пустым/шаблонным.
+       ========================= -->
+    <section id="testimonials" class="section testimonials">
+      <div class="container">
+        <h2 class="section-title">Testimonials</h2>
+
+        <div class="testimonials-list" aria-hidden="true">
+          <!-- Комментарий: добавляй .testimonial-card, копируя шаблон ниже -->
+          <blockquote class="testimonial-card">
+            <p class="testimonial-text">Client testimonial will go here. Replace this text later.</p>
+            <cite class="testimonial-author">— Client Name</cite>
+          </blockquote>
+
+          <blockquote class="testimonial-card">
+            <p class="testimonial-text">Another example testimonial. Replace later.</p>
+            <cite class="testimonial-author">— Client Name</cite>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         Contacts Section (тут всё реализовано)
+         - Заголовок: "Связаться со мной" (как просил)
+         - Форма отправляет на Formspree (замени your-form-id)
+         - После отправки редиректит на thankyou.html (замени значение _next, когда развернёшь сайт)
+       ========================= -->
+    <section id="contact" class="section contact">
+      <div class="container">
+        <!-- Заголовок на русском по требованию -->
+        <h2 class="section-title"><span class="en">Contact Me</span></h2>
+        <p class="lead">Drop a short message — I usually reply within 24 hours.</p>
+
+        <!-- =========================
+             Contact form
+             - ВАЖНО: поменяй action на свой Formspree ID
+               Пример: action="https://formspree.io/f/mayformid"
+             - Для редиректа после отправки: укажи полный путь в _next
+               Пример: value="https://username.github.io/repo/thankyou.html"
+           ========================= -->
+        <form id="contact-form" class="contact-form">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+          <button type="submit" class="btn">Send Message</button>
+        </form>
+        <!-- ✅ Form status (ошибки/успех) -->
+          <p id="form-status" role="status" aria-live="polite"></p>
+
+        <!-- =========================
+             Quick contact icons (telegram + github)
+           ========================= -->
+        <div class="quick-contacts">
+          <!-- Telegram -->
+          <a class="icon-btn" href="https://t.me/nature_flips" target="_blank" rel="noopener" aria-label="Telegram">
+            <!-- Telegram SVG -->
+            <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+              <path fill="currentColor" d="M21.999 3.5L3.5 10.5l3.5 1.4L9 20.5l2.5-6.4 8.4-10.6z"></path>
+            </svg>
+          </a>
+
+          <!-- GitHub -->
+          <a class="icon-btn" href="https://github.com/Vadym134" target="_blank" rel="noopener" aria-label="GitHub">
+            <!-- GitHub SVG -->
+            <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+              <path fill="currentColor" d="M12 .5C5.65.5.5 5.65.5 12c0 5.09 3.29 9.39 7.86 10.92.58.11.79-.25.79-.56 0-.28-.01-1-.02-1.97-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.69 1.25 3.35.95.1-.74.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.25.45-2.28 1.18-3.08-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11.1 11.1 0 0 1 2.89-.39c.98.01 1.97.13 2.89.39 2.2-1.49 3.17-1.18 3.17-1.18.62 1.59.23 2.76.12 3.05.73.8 1.18 1.83 1.18 3.08 0 4.41-2.69 5.39-5.25 5.68.4.35.77 1.05.77 2.12 0 1.53-.01 2.77-.01 3.15 0 .31.21.68.79.56C20.71 21.39 24 17.09 24 12 24 5.65 18.35.5 12 .5z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================
+       Footer
+       - Футер с копирайтом
+     ========================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Vadymdev. All rights reserved.</p>
     </div>
-  </div>
+  </footer>
+
+  <!-- =========================
+       Floating Contact Button (фиксированная кнопка справа внизу)
+       - Кнопка якорит на #contact
+     ========================= -->
+  <a class="floating-contact" href="#contact" aria-label="Contact me">Contact me</a>
+
+  <!-- =========================
+       JS: smooth scroll, год в футере
+     ========================= -->
+  <script>
+  // === Вставляем текущий год в футер ===
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // === Плавный скролл для анкорных ссылок (включая плавающую кнопку) ===
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href');
+      if (targetId.startsWith('#')) {
+        const target = document.querySelector(targetId);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          this.blur();
+        }
+      }
+    });
+  });
+
+  // === Фокус на первое поле при переходе по якорю ===
+  window.addEventListener('hashchange', () => {
+    const el = document.querySelector(location.hash + ' input, ' + location.hash + ' textarea');
+    if (el) el.focus();
+  });
+
+  // === Обработка формы через Formspree + редирект на thankyou.html ===
+  const form = document.getElementById("contact-form");
+  if (form) {
+    form.addEventListener("submit", async function (event) {
+      event.preventDefault();
+      const data = new FormData(form);
+
+      try {
+        let response = await fetch("https://formspree.io/f/mqaykvad", {
+          method: "POST",
+          body: data,
+          headers: { "Accept": "application/json" }
+        });
+
+        if (response.ok) {
+          window.location.href = "thankyou.html"; // редирект на свою страницу
+        } else {
+          document.getElementById("form-status").textContent =
+            "Something went wrong. Please try again.";
+        }
+      } catch (error) {
+        document.getElementById("form-status").textContent =
+          "Network error. Please try again later.";
+      }
+    });
+  }
+</script>
 </body>
 </html>
