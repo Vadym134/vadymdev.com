@@ -8,173 +8,111 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <!-- Основной CSS (положи рядом файл style.css) -->
+  <!-- Основной CSS -->
   <link rel="stylesheet" href="style.css">
-
-  <!-- NOTE: поменяй favicon, если нужно -->
 </head>
 <body>
 
-  <!-- =========================
-       Site Header
-       - Имя, короткий слоган
-       - Здесь менять: .site-title и .site-tagline
-     ========================= -->
+  <!-- Header -->
   <header class="site-header">
     <div class="container">
-      <!-- Название: поменяй "Vadym" если потребуется -->
       <h1 class="site-title">Vadym</h1>
-      <!-- Короткий слоган: редактируй здесь -->
       <p class="site-tagline">Crafting clear, modern web experiences</p>
     </div>
   </header>
 
-  <!-- =========================
-       Главный контент
-     ========================= -->
   <main role="main">
 
-    <!-- =========================
-         Services Section
-         - Шаблон для услуг. Пока пусто — вставишь карточки позже.
-         - Комментарии ниже подскажут как добавлять пункт услуги.
-       ========================= -->
+    <!-- Services -->
     <section id="services" class="section services">
       <div class="container">
         <h2 class="section-title">Services</h2>
 
-        <!--
-          Пример структуры карточки услуги:
-          <article class="service-card">
-            <h3>Service title</h3>
-            <p>Short description...</p>
-          </article>
-
-          Для добавления: копируй <article class="service-card"> ... </article>
-        -->
-        <div class="services-grid" aria-hidden="true">
-          <!-- PLACEHOLDER: Добавь сюда реальные карточки позже -->
-          <!-- Пример пробного блока (удали или замени) -->
+        <div class="services-grid">
           <article class="service-card">
             <h3>Web Design</h3>
-            <p class="muted">Add a short description of this service here.</p>
+            <p class="muted">Modern and clean website layouts.</p>
+            <button class="btn btn-examples" data-service="design">Examples</button>
           </article>
 
           <article class="service-card">
             <h3>Frontend Development</h3>
-            <p class="muted">Placeholder — replace with actual offering.</p>
+            <p class="muted">Responsive sites with smooth animations.</p>
+            <button class="btn btn-examples" data-service="frontend">Examples</button>
           </article>
 
           <article class="service-card">
             <h3>UI Improvements</h3>
-            <p class="muted">Placeholder — replace with actual offering.</p>
+            <p class="muted">Enhancing existing interfaces for usability.</p>
+            <button class="btn btn-examples" data-service="ui">Examples</button>
           </article>
         </div>
+
+        <!-- Dynamic examples slider -->
+        <div id="examples-container" class="slider-container"></div>
       </div>
     </section>
 
-    <!-- =========================
-         Portfolio Section
-         - Сетка для демонстрации работ.
-         - Для каждой работы используй .portfolio-item (img + caption)
-       ========================= -->
-    <section id="portfolio" class="section portfolio">
+    <!-- Reviews -->
+    <section id="reviews" class="section reviews">
       <div class="container">
-        <h2 class="section-title">Portfolio</h2>
-
-        <div class="portfolio-grid" aria-hidden="true">
-          <!-- PLACEHOLDER items (замени картинками/ссылками на проект) -->
-          <figure class="portfolio-item">
-            <img src="https://via.placeholder.com/600x380?text=Project+1" alt="Project 1 preview">
-            <figcaption class="muted">Project 1 — short note</figcaption>
-          </figure>
-
-          <figure class="portfolio-item">
-            <img src="https://via.placeholder.com/600x380?text=Project+2" alt="Project 2 preview">
-            <figcaption class="muted">Project 2 — short note</figcaption>
-          </figure>
-
-          <figure class="portfolio-item">
-            <img src="https://via.placeholder.com/600x380?text=Project+3" alt="Project 3 preview">
-            <figcaption class="muted">Project 3 — short note</figcaption>
-          </figure>
-
-          <figure class="portfolio-item">
-            <img src="https://via.placeholder.com/600x380?text=Project+4" alt="Project 4 preview">
-            <figcaption class="muted">Project 4 — short note</figcaption>
-          </figure>
+        <h2 class="section-title">Reviews</h2>
+        <div class="slider-container">
+          <button class="slider-btn prev">&lt;</button>
+          <div class="reviews-slider scrollbar-hide">
+            <div class="review-card">
+              <p class="review-text">"Vadym turned my Figma design into a clean responsive landing page. Fast delivery and everything worked perfectly!"</p>
+              <div class="review-author">— Anna K.</div>
+            </div>
+            <div class="review-card">
+              <p class="review-text">"Great job fixing my website’s layout. The mobile version was broken, now it looks smooth again."</p>
+              <div class="review-author">— Michael R.</div>
+            </div>
+            <div class="review-card">
+              <p class="review-text">"He added a working contact form and integrated it with my email. Exactly what I needed!"</p>
+              <div class="review-author">— Sofia L.</div>
+            </div>
+            <div class="review-card">
+              <p class="review-text">"Quick and professional. Small bug fixes were done the same day."</p>
+              <div class="review-author">— Daniel M.</div>
+            </div>
+            <div class="review-card">
+              <p class="review-text">"Vadym connected my site’s form to Google Sheets and Telegram. Now I never miss a lead."</p>
+              <div class="review-author">— Emily T.</div>
+            </div>
+            <div class="review-card">
+              <p class="review-text">"Reliable developer. Clear communication and modern, responsive code. Highly recommend."</p>
+              <div class="review-author">— James P.</div>
+            </div>
+          </div>
+          <button class="slider-btn next">&gt;</button>
         </div>
       </div>
     </section>
 
-    <!-- =========================
-         Testimonials Section
-         - Место для отзывов клиентов. Оставлено пустым/шаблонным.
-       ========================= -->
-    <section id="testimonials" class="section testimonials">
-      <div class="container">
-        <h2 class="section-title">Testimonials</h2>
-
-        <div class="testimonials-list" aria-hidden="true">
-          <!-- Комментарий: добавляй .testimonial-card, копируя шаблон ниже -->
-          <blockquote class="testimonial-card">
-            <p class="testimonial-text">Client testimonial will go here. Replace this text later.</p>
-            <cite class="testimonial-author">— Client Name</cite>
-          </blockquote>
-
-          <blockquote class="testimonial-card">
-            <p class="testimonial-text">Another example testimonial. Replace later.</p>
-            <cite class="testimonial-author">— Client Name</cite>
-          </blockquote>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================
-         Contacts Section (тут всё реализовано)
-         - Заголовок: "Связаться со мной" (как просил)
-         - Форма отправляет на Formspree (замени your-form-id)
-         - После отправки редиректит на thankyou.html (замени значение _next, когда развернёшь сайт)
-       ========================= -->
+    <!-- Contact -->
     <section id="contact" class="section contact">
       <div class="container">
-        <!-- Заголовок на русском по требованию -->
-        <h2 class="section-title"><span class="en">Contact Me</span></h2>
+        <h2 class="section-title">Contact Me</h2>
         <p class="lead">Drop a short message — I usually reply within 24 hours.</p>
 
-        <!-- =========================
-             Contact form
-             - ВАЖНО: поменяй action на свой Formspree ID
-               Пример: action="https://formspree.io/f/mayformid"
-             - Для редиректа после отправки: укажи полный путь в _next
-               Пример: value="https://username.github.io/repo/thankyou.html"
-           ========================= -->
         <form id="contact-form" class="contact-form">
           <input type="text" name="name" placeholder="Your Name" required>
           <input type="email" name="email" placeholder="Your Email" required>
           <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-          <button type="submit" class="btn">Send Message</button>
+          <button type="submit" class="btn btn-primary">Send Message</button>
         </form>
-        <!-- ✅ Form status (ошибки/успех) -->
-          <p id="form-status" role="status" aria-live="polite"></p>
+        <p id="form-status" role="status" aria-live="polite"></p>
 
-        <!-- =========================
-             Quick contact icons (telegram + github)
-           ========================= -->
         <div class="quick-contacts">
-          <!-- Telegram -->
           <a class="icon-btn" href="https://t.me/nature_flips" target="_blank" rel="noopener" aria-label="Telegram">
-            <!-- Telegram SVG -->
             <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
               <path fill="currentColor" d="M21.999 3.5L3.5 10.5l3.5 1.4L9 20.5l2.5-6.4 8.4-10.6z"></path>
             </svg>
           </a>
-
-          <!-- GitHub -->
           <a class="icon-btn" href="https://github.com/Vadym134" target="_blank" rel="noopener" aria-label="GitHub">
-            <!-- GitHub SVG -->
             <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
-              <path fill="currentColor" d="M12 .5C5.65.5.5 5.65.5 12c0 5.09 3.29 9.39 7.86 10.92.58.11.79-.25.79-.56 0-.28-.01-1-.02-1.97-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.69 1.25 3.35.95.1-.74.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.25.45-2.28 1.18-3.08-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11.1 11.1 0 0 1 2.89-.39c.98.01 1.97.13 2.89.39 2.2-1.49 3.17-1.18 3.17-1.18.62 1.59.23 2.76.12 3.05.73.8 1.18 1.83 1.18 3.08 0 4.41-2.69 5.39-5.25 5.68.4.35.77 1.05.77 2.12 0 1.53-.01 2.77-.01 3.15 0 .31.21.68.79.56C20.71 21.39 24 17.09 24 12 24 5.65 18.35.5 12 .5z"/>
+              <path fill="currentColor" d="M12 .5C5.65.5.5 5.65.5 12c0 5.09 3.29 9.39 7.86 10.92..."/>
             </svg>
           </a>
         </div>
@@ -183,76 +121,122 @@
 
   </main>
 
-  <!-- =========================
-       Footer
-       - Футер с копирайтом
-     ========================= -->
+  <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
       <p>© <span id="year"></span> Vadymdev. All rights reserved.</p>
     </div>
   </footer>
 
-  <!-- =========================
-       Floating Contact Button (фиксированная кнопка справа внизу)
-       - Кнопка якорит на #contact
-     ========================= -->
   <a class="floating-contact" href="#contact" aria-label="Contact me">Contact me</a>
 
-  <!-- =========================
-       JS: smooth scroll, год в футере
-     ========================= -->
+  <!-- Scripts -->
   <script>
-  // === Вставляем текущий год в футер ===
-  document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-  // === Плавный скролл для анкорных ссылок (включая плавающую кнопку) ===
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', function(e) {
-      const targetId = this.getAttribute('href');
-      if (targetId.startsWith('#')) {
-        const target = document.querySelector(targetId);
+    // smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
         if (target) {
           e.preventDefault();
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          this.blur();
+          target.scrollIntoView({ behavior: 'smooth' });
         }
-      }
+      });
     });
-  });
 
-  // === Фокус на первое поле при переходе по якорю ===
-  window.addEventListener('hashchange', () => {
-    const el = document.querySelector(location.hash + ' input, ' + location.hash + ' textarea');
-    if (el) el.focus();
-  });
+    // Formspree
+    const form = document.getElementById("contact-form");
+    if (form) {
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        const data = new FormData(form);
+        try {
+          let response = await fetch("https://formspree.io/f/mqaykvad", {
+            method: "POST",
+            body: data,
+            headers: { "Accept": "application/json" }
+          });
+          if (response.ok) {
+            window.location.href = "thankyou.html";
+          } else {
+            document.getElementById("form-status").textContent =
+              "Something went wrong. Please try again.";
+          }
+        } catch {
+          document.getElementById("form-status").textContent =
+            "Network error. Please try again later.";
+        }
+      });
+    }
 
-  // === Обработка формы через Formspree + редирект на thankyou.html ===
-  const form = document.getElementById("contact-form");
-  if (form) {
-    form.addEventListener("submit", async function (event) {
-      event.preventDefault();
-      const data = new FormData(form);
+    // Examples slider
+    const examplesData = {
+      design: [
+        "https://via.placeholder.com/300x180?text=Design+1",
+        "https://via.placeholder.com/300x180?text=Design+2",
+        "https://via.placeholder.com/300x180?text=Design+3"
+      ],
+      frontend: [
+        "https://via.placeholder.com/300x180?text=Frontend+1",
+        "https://via.placeholder.com/300x180?text=Frontend+2",
+        "https://via.placeholder.com/300x180?text=Frontend+3"
+      ],
+      ui: [
+        "https://via.placeholder.com/300x180?text=UI+1",
+        "https://via.placeholder.com/300x180?text=UI+2",
+        "https://via.placeholder.com/300x180?text=UI+3"
+      ]
+    };
 
-      try {
-        let response = await fetch("https://formspree.io/f/mqaykvad", {
-          method: "POST",
-          body: data,
-          headers: { "Accept": "application/json" }
+    const examplesContainer = document.getElementById("examples-container");
+
+    document.querySelectorAll(".btn-examples").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const type = btn.dataset.service;
+        examplesContainer.innerHTML = "";
+        const sliderWrapper = document.createElement("div");
+        sliderWrapper.classList.add("slider-container");
+
+        const prevBtn = document.createElement("button");
+        prevBtn.className = "slider-btn prev";
+        prevBtn.textContent = "<";
+
+        const nextBtn = document.createElement("button");
+        nextBtn.className = "slider-btn next";
+        nextBtn.textContent = ">";
+
+        const slider = document.createElement("div");
+        slider.classList.add("examples-slider");
+
+        examplesData[type].forEach(src => {
+          const img = document.createElement("img");
+          img.src = src;
+          img.alt = `${type} example`;
+          slider.appendChild(img);
         });
 
-        if (response.ok) {
-          window.location.href = "thankyou.html"; // редирект на свою страницу
-        } else {
-          document.getElementById("form-status").textContent =
-            "Something went wrong. Please try again.";
-        }
-      } catch (error) {
-        document.getElementById("form-status").textContent =
-          "Network error. Please try again later.";
+        sliderWrapper.appendChild(prevBtn);
+        sliderWrapper.appendChild(slider);
+        sliderWrapper.appendChild(nextBtn);
+        examplesContainer.appendChild(sliderWrapper);
+
+        prevBtn.addEventListener("click", () => { slider.scrollBy({ left: -320, behavior: 'smooth' }); });
+        nextBtn.addEventListener("click", () => { slider.scrollBy({ left: 320, behavior: 'smooth' }); });
+        slider.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      });
+    });
+
+    // Reviews slider arrows
+    document.querySelectorAll(".slider-container").forEach(container => {
+      const slider = container.querySelector(".reviews-slider");
+      const prev = container.querySelector(".slider-btn.prev");
+      const next = container.querySelector(".slider-btn.next");
+      if(slider && prev && next){
+        prev.addEventListener("click", () => { slider.scrollBy({ left: -320, behavior: 'smooth' }); });
+        next.addEventListener("click", () => { slider.scrollBy({ left: 320, behavior: 'smooth' }); });
       }
     });
-  }
-</script>
+  </script>
 </body>
 </html>

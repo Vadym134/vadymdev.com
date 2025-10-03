@@ -1,73 +1,32 @@
-/* =========================================================================
-   style.css — стили для landing (комментарии на русском — читай и редактируй)
-   ========================================================================= */
-
-/* ====== CSS Reset (минимальный) ====== */
+/* Reset */
 * { box-sizing: border-box; margin: 0; padding: 0; }
-html, body { height: 100%; }
 body {
-  font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
+  font-family: 'Poppins', system-ui, sans-serif;
   color: #223;
-  background: #FBFCFD; /* очень светлый фон */
+  background: #FBFCFD;
   line-height: 1.5;
-  -webkit-text-size-adjust: 100%;
 }
-
-/* ====== Переменные цветов ====== */
 :root{
-  --accent-1: #2bb3a7;        /* мягкий бирюзовый */
-  --accent-2: #4b84e6;        /* спокойный синий */
-  --muted: #6b7280;          /* серый для вторичного текста */
-  --card-bg: #ffffff;        /* карточки */
-  --section-bg: #f6f8fb;     /* секции чуть контрастнее */
+  --accent-1: #2bb3a7;
+  --accent-2: #4b84e6;
+  --muted: #6b7280;
+  --card-bg: #ffffff;
+  --section-bg: #f6f8fb;
   --radius: 14px;
   --shadow-soft: 0 6px 20px rgba(34,38,52,0.08);
   --shadow-sm: 0 4px 14px rgba(34,38,52,0.06);
 }
-
-/* ====== Общие контейнеры ====== */
-.container {
-  width: 92%;
-  max-width: 1100px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Стили для заголовков секций */
-.section {
-  padding: 64px 0;
-}
-.section-title {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 12px;
-  color: #0f1724;
-}
+.container { width: 92%; max-width: 1100px; margin: 0 auto; }
+.section { padding: 64px 0; }
+.section-title { font-size: 1.5rem; font-weight: 600; margin-bottom: 12px; color: #0f1724; }
 .lead { color: var(--muted); margin-bottom: 20px; }
 
-/* ====== Header ====== */
-/* Коммент: header - чистый, крупный, с отступом сверху */
-.site-header {
-  padding: 46px 0 28px;
-  background: linear-gradient(180deg, rgba(75,132,230,0.03), rgba(43,179,167,0.01));
-  border-bottom: 1px solid rgba(34,38,52,0.04);
-}
-.site-title {
-  font-size: 2.25rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  color: #0b1220;
-}
-.site-tagline {
-  margin-top: 8px;
-  color: var(--muted);
-  font-weight: 400;
-}
+/* Header */
+.site-header { padding: 46px 0 28px; background: linear-gradient(180deg, rgba(75,132,230,0.03), rgba(43,179,167,0.01)); border-bottom: 1px solid rgba(34,38,52,0.04); }
+.site-title { font-size: 2.25rem; font-weight: 700; color: #0b1220; }
+.site-tagline { margin-top: 8px; color: var(--muted); }
 
-/* ====== Services ====== */
-/* Сетка карточек услуг */
+/* Services */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -81,63 +40,86 @@ body {
   box-shadow: var(--shadow-sm);
   transition: transform .25s ease, box-shadow .25s ease;
 }
-.service-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-soft);
-}
+.service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-soft); }
 .service-card h3 { margin-bottom: 8px; font-size: 1.05rem; }
 .service-card .muted { color: var(--muted); font-size: 0.95rem; }
 
-/* ====== Portfolio ====== */
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 16px;
-  margin-top: 18px;
+/* Slider wrapper for arrows */
+.slider-container {
+  position: relative;
+  display: flex;
+  align-items: center;
 }
-.portfolio-item {
-  background: var(--card-bg);
-  border-radius: 12px;
-  overflow: hidden;
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: rgba(0,0,0,0.05);
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+.slider-btn.prev { left: -18px; }
+.slider-btn.next { right: -18px; }
+.slider-btn:hover { background: rgba(0,0,0,0.1); }
+
+/* Reviews */
+.reviews-slider {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  margin-top: 24px;
+  padding-bottom: 6px;
+}
+.reviews-slider::-webkit-scrollbar { display: none; }
+.review-card {
+  flex: 0 0 300px;
+  background: #fff;
+  padding: 20px;
+  border-radius: var(--radius);
   box-shadow: var(--shadow-sm);
+  scroll-snap-align: start;
   transition: transform .25s ease, box-shadow .25s ease;
 }
-.portfolio-item img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-.portfolio-item:hover { transform: translateY(-6px); box-shadow: var(--shadow-soft); }
-.portfolio-item figcaption { padding: 12px; color: var(--muted); font-size: 0.95rem; }
+.review-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-soft); }
+.review-text { color: #444; font-style: italic; }
+.review-author { margin-top: 10px; font-weight: 600; color: #222; }
 
-/* ====== Testimonials ====== */
-.testimonials-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+/* Examples slider */
+.examples-slider {
+  margin-top: 24px;
+  padding: 16px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: var(--shadow-soft);
+  overflow-x: auto;
+  display: flex;
   gap: 16px;
-  margin-top: 18px;
+  scroll-behavior: smooth;
 }
-.testimonial-card {
-  background: linear-gradient(180deg, #fff, #fbfdff);
-  border-radius: 12px;
-  padding: 18px;
+.examples-slider img {
+  height: 160px;
+  border-radius: 10px;
+  flex-shrink: 0;
   box-shadow: var(--shadow-sm);
-  font-style: normal;
+  transition: transform .2s ease;
 }
-.testimonial-text { color: #223; margin-bottom: 12px; }
-.testimonial-author { color: var(--muted); font-size: 0.9rem; }
+.examples-slider img:hover { transform: scale(1.05); }
 
-/* ====== Contact Section ====== */
-/* Фоновая полоса секции чуть отличающаяся */
+/* Contact */
 .contact { background: var(--section-bg); }
-.contact .contact-form {
+.contact-form {
   max-width: 680px;
   margin: 10px auto 22px;
   display: grid;
   gap: 12px;
 }
-
-/* Поля формы: аккуратно, с тенями и скруглениями */
 .contact-form input,
 .contact-form textarea {
   width: 100%;
@@ -146,112 +128,40 @@ body {
   border: 1px solid rgba(34,38,52,0.08);
   background: #fff;
   box-shadow: 0 3px 10px rgba(34,38,52,0.04);
-  font-size: 1rem;
-  color: #0b1220;
-  transition: box-shadow .18s ease, border-color .18s ease;
 }
 .contact-form input:focus,
 .contact-form textarea:focus {
   outline: none;
-  border-color: rgba(75,132,230,0.9);
+  border-color: var(--accent-2);
   box-shadow: 0 6px 20px rgba(75,132,230,0.08);
 }
+.btn { display: inline-block; padding: 12px 18px; border-radius: 999px; font-weight: 600; border: none; cursor: pointer; }
+.btn-primary { background: linear-gradient(135deg, var(--accent-1), var(--accent-2)); color: #fff; box-shadow: 0 8px 28px rgba(43,179,167,0.12); }
+.btn-primary:hover { transform: translateY(-3px); }
 
-/* Кнопка отправки */
-.btn {
-  display: inline-block;
+/* Quick contacts */
+.quick-contacts { display: flex; gap: 12px; justify-content: center; margin-top: 20px; }
+.icon-btn { display: flex; align-items: center; justify-content: center; width: 52px; height: 52px; border-radius: 50%; background: #111827; color: #fff; }
+.icon-btn:hover { background: linear-gradient(135deg, var(--accent-1), var(--accent-2)); }
+
+/* Floating contact */
+.floating-contact {
+  position: fixed; right: 20px; bottom: 20px;
   padding: 12px 18px;
   border-radius: 999px;
-  font-weight: 600;
-  border: none;
-  cursor: pointer;
-  text-decoration: none;
-  text-align: center;
-}
-.btn-primary {
   background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
-  color: #fff;
-  box-shadow: 0 8px 28px rgba(43,179,167,0.12);
-  transition: transform .15s ease, box-shadow .15s ease;
-}
-.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 36px rgba(43,179,167,0.15); }
-
-/* ====== Quick contacts (иконки) ====== */
-.quick-contacts {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  align-items: center;
-}
-.icon-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  background: #111827;
-  color: #fff;
-  box-shadow: 0 6px 18px rgba(17,24,39,0.08);
-  transition: transform .18s ease, background .18s ease;
+  color: #fff; font-weight: 600;
   text-decoration: none;
 }
-.icon-btn svg { display: block; }
-.icon-btn:hover {
-  transform: translateY(-6px);
-  background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
-}
+.floating-contact:hover { transform: translateY(-4px); }
 
-/* ====== Floating Contact Button (фиксированная кнопка) ====== */
-/* Комментарий: правая нижняя кнопка, всегда на виду */
-.floating-contact {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  z-index: 1200;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 48px;
-  padding: 0 14px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
-  color: #fff;
-  box-shadow: 0 16px 40px rgba(43,179,167,0.14);
-  text-decoration: none;
-  font-weight: 600;
-  transition: transform .16s ease, box-shadow .16s ease;
-}
-.floating-contact:hover { transform: translateY(-6px); box-shadow: 0 24px 56px rgba(75,132,230,0.18); }
+/* Footer */
+.site-footer { padding: 20px 0; text-align: center; color: var(--muted); font-size: 0.95rem; background: #fff; border-top: 1px solid rgba(34,38,52,0.04); }
 
-/* ====== Footer ====== */
-.site-footer {
-  padding: 20px 0;
-  text-align: center;
-  color: var(--muted);
-  font-size: 0.95rem;
-  border-top: 1px solid rgba(34,38,52,0.04);
-  margin-top: 36px;
-  background: #fff;
-}
+/* Scrollbar hide */
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
 
-/* ====== Accessibility helpers ====== */
-.sr-only {
-  position: absolute !important;
-  height: 1px; width: 1px;
-  overflow: hidden;
-  clip: rect(1px, 1px, 1px, 1px);
-  white-space: nowrap;
-}
-
-/* ====== Responsive tweaks ====== */
-@media (max-width: 880px) {
-  .site-title { font-size: 1.75rem; }
-  .section { padding: 48px 0; }
-  .floating-contact { right: 14px; bottom: 14px; padding: 0 12px; }
-}
-@media (max-width: 480px) {
-  .site-title { font-size: 1.5rem; }
-  .contact-form { padding: 0 8px; }
-  .portfolio-item figcaption { font-size: 0.9rem; }
-}
+/* Responsive */
+@media (max-width: 880px) { .site-title { font-size: 1.75rem; } }
+@media (max-width: 480px) { .site-title { font-size: 1.5rem; } }
