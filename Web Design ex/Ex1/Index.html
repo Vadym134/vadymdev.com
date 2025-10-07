@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Product — Fast Landing Page</title>
+  <meta name="description" content="In short: a solution for ... — boost your conversions with a simple step" />
+  <link rel="stylesheet" href="main.css" />
+  <script defer src="main.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#hero">Product</a>
+
+      <nav id="primary-navigation" class="nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#testimonials">Reviews</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button class="nav-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Open menu">
+        ☰
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="hero" class="hero">
+      <div class="container hero-inner">
+        <h1>A solution for <span class="accent">your</span> business</h1>
+        <p class="lead">A short, catchy subtitle: what the product does and what problem it solves.</p>
+        <div class="hero-cta">
+          <a class="btn primary" href="#pricing">Try for free</a>
+          <a class="btn ghost" href="#features">Learn more</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features" class="features section animate-on-scroll">
+      <div class="container">
+        <h2 class="section-title">Why choose us</h2>
+        <div class="grid features-grid">
+          <article class="feature-card">
+            <h3>Quick integration</h3>
+            <p>Just a few clicks — and everything is set up.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Reliability</h3>
+            <p>Stable performance 24/7 and responsive support.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Analytics</h3>
+            <p>Built-in reports and metric-driven improvements.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing" class="pricing section">
+      <div class="container">
+        <h2 class="section-title">Pricing</h2>
+        <div class="grid pricing-grid animate-on-scroll">
+          <div class="card pricing-card">
+            <h3>Starter</h3>
+            <p class="price">Free</p>
+            <ul>
+              <li>Up to 5 users</li>
+              <li>Basic functionality</li>
+            </ul>
+            <a class="btn primary" href="#contact">Choose</a>
+          </div>
+          <div class="card pricing-card featured">
+            <h3>Pro</h3>
+            <p class="price">Best value</p>
+            <ul>
+              <li>Unlimited users</li>
+              <li>Priority support</li>
+            </ul>
+            <a class="btn primary" href="#contact">Choose</a>
+          </div>
+          <div class="card pricing-card">
+            <h3>Enterprise</h3>
+            <p class="price">Custom</p>
+            <ul>
+              <li>Integrations and SLA</li>
+              <li>Dedicated manager</li>
+            </ul>
+            <a class="btn primary" href="#contact">Contact us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews -->
+    <section id="testimonials" class="testimonials section animate-on-scroll">
+      <div class="container">
+        <h2 class="section-title">Reviews</h2>
+        <div class="testimonials-list">
+          <blockquote class="testimonial">
+            <p>Great product — implemented it and saw an increase in leads.</p>
+            <cite>— Marina, Marketing Specialist</cite>
+          </blockquote>
+          <blockquote class="testimonial">
+            <p>Support responds quickly — highly recommend.</p>
+            <cite>— Alex, Business Owner</cite>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact section animate-on-scroll">
+      <div class="container">
+        <h2 class="section-title">Contact</h2>
+
+        <form id="contact-form" class="contact-form" novalidate>
+          <div class="form-row">
+            <label for="name">Name</label>
+            <input id="name" name="name" required />
+          </div>
+
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required />
+          </div>
+
+          <div class="form-row">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+
+          <div class="form-row">
+            <button class="btn primary" type="submit">Send</button>
+            <div id="form-status" aria-live="polite" class="form-status"></div>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Product. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
