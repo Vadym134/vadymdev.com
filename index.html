@@ -172,22 +172,23 @@
 
     // Examples slider
     const examplesData = {
-      design: [
-        "https://via.placeholder.com/300x180?text=Design+1",
-        "https://via.placeholder.com/300x180?text=Design+2",
-        "https://via.placeholder.com/300x180?text=Design+3"
-      ],
-      frontend: [
-        "https://via.placeholder.com/300x180?text=Frontend+1",
-        "https://via.placeholder.com/300x180?text=Frontend+2",
-        "https://via.placeholder.com/300x180?text=Frontend+3"
-      ],
-      ui: [
-        "https://via.placeholder.com/300x180?text=UI+1",
-        "https://via.placeholder.com/300x180?text=UI+2",
-        "https://via.placeholder.com/300x180?text=UI+3"
-      ]
-    };
+  design: [
+    { img: "https://via.placeholder.com/300x180?text=Design+1", link: "C:\Users\consu\vadymdev\Web Design ex\Ex1\Index.html" },
+    { img: "https://via.placeholder.com/300x180?text=Design+2" },
+    { img: "https://via.placeholder.com/300x180?text=Design+3" }
+  ],
+  frontend: [
+    { img: "https://via.placeholder.com/300x180?text=Frontend+1" },
+    { img: "https://via.placeholder.com/300x180?text=Frontend+2" },
+    { img: "https://via.placeholder.com/300x180?text=Frontend+3" }
+  ],
+  ui: [
+    { img: "https://via.placeholder.com/300x180?text=UI+1" },
+    { img: "https://via.placeholder.com/300x180?text=UI+2" },
+    { img: "https://via.placeholder.com/300x180?text=UI+3" }
+  ]
+};
+
 
     const examplesContainer = document.getElementById("examples-container");
 
@@ -209,12 +210,23 @@
         const slider = document.createElement("div");
         slider.classList.add("examples-slider");
 
-        examplesData[type].forEach(src => {
-          const img = document.createElement("img");
-          img.src = src;
-          img.alt = `${type} example`;
+        examplesData[type].forEach(item => {
+        const img = document.createElement("img");
+        img.src = item.img;
+        img.alt = `${type} example`;
+
+        // Если у примера есть ссылка — оборачиваем в <a>
+        if (item.link) {
+          const link = document.createElement("a");
+          link.href = item.link;
+          link.target = "_blank";
+          link.appendChild(img);
+          slider.appendChild(link);
+        } else {
           slider.appendChild(img);
+        }
         });
+
 
         sliderWrapper.appendChild(prevBtn);
         sliderWrapper.appendChild(slider);
