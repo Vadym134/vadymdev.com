@@ -171,24 +171,21 @@
     }
 
     // Examples slider
-    const examplesData = {
+   const examplesData = {
   design: [
-    {
-      img: "https://vadymdev.com/img/imgex1.png",
-      link: "https://vadymdev.com/web-design-ex/ex1/ex1landing.html"
-    },
-    { img: "https://via.placeholder.com/300x180?text=Design+2" },
-    { img: "https://via.placeholder.com/300x180?text=Design+3" }
+    { title: "Landing", link: "https://vadymdev.com/web-design-ex/ex1/ex1landing.html" },
+    { title: "Portfolio" },
+    { title: "Dashboard" }
   ],
   frontend: [
-    { img: "https://via.placeholder.com/300x180?text=Frontend+1" },
-    { img: "https://via.placeholder.com/300x180?text=Frontend+2" },
-    { img: "https://via.placeholder.com/300x180?text=Frontend+3" }
+    { title: "Animated Menu" },
+    { title: "Contact Form" },
+    { title: "Product Page" }
   ],
   ui: [
-    { img: "https://via.placeholder.com/300x180?text=UI+1" },
-    { img: "https://via.placeholder.com/300x180?text=UI+2" },
-    { img: "https://via.placeholder.com/300x180?text=UI+3" }
+    { title: "Dark Theme" },
+    { title: "Modal Redesign" },
+    { title: "Clean Layout" }
   ]
 };
 
@@ -213,22 +210,23 @@
         const slider = document.createElement("div");
         slider.classList.add("examples-slider");
 
-        examplesData[type].forEach(item => {
-        const img = document.createElement("img");
-        img.src = item.img;
-        img.alt = `${type} example`;
+       examplesData[type].forEach((item, index) => {
+        const exampleCard = document.createElement("a");
+        exampleCard.classList.add("example-card", `example-${type}`);
+        exampleCard.href = item.link || "#";
+        exampleCard.target = item.link ? "_blank" : "_self";
 
-        // Если у примера есть ссылка — оборачиваем в <a>
-        if (item.link) {
-          const link = document.createElement("a");
-          link.href = item.link;
-          link.target = "_blank";
-          link.appendChild(img);
-          slider.appendChild(link);
-        } else {
-          slider.appendChild(img);
-        }
-        });
+        // текст в центре карточки
+        const caption = document.createElement("div");
+        caption.classList.add("example-caption");
+        caption.textContent = item.title || `Ex.${index + 1}`;
+
+        exampleCard.appendChild(caption);
+        slider.appendChild(exampleCard);
+      });
+
+
+
 
 
         sliderWrapper.appendChild(prevBtn);
