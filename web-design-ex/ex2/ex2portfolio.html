@@ -1,86 +1,89 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio — Frontend Developer</title>
-  <link rel="stylesheet" href="css/main.css" />
+  <title>Portfolio — Alex Dev</title>
+  <link rel="stylesheet" href="ex2.css" />
 </head>
-<body>
+<body class="dark">
 
   <!-- HEADER -->
   <header class="header">
-    <div class="container">
-      <h1 class="logo">MyPortfolio</h1>
+    <div class="container header-inner">
+      <h1 class="logo">Alex Dev</h1>
       <nav class="nav">
-        <a href="#projects">Проекты</a>
-        <a href="#about">Обо мне</a>
-        <a href="#contact">Контакты</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
   <!-- HERO -->
   <section class="hero">
-    <div class="container">
-      <h2>Привет! Я Frontend-разработчик</h2>
-      <p>Делаю адаптивные сайты, лендинги, UI-анимации и продающие страницы.</p>
-      <a href="#projects" class="btn">Смотреть проекты</a>
+    <div class="container hero-inner">
+      <h2 class="hero-title">Crafting Digital Experiences</h2>
+      <p class="hero-subtitle">Frontend Developer creating interactive, responsive, and modern websites using the latest technologies.</p>
+      <a href="#projects" class="btn">Explore Projects</a>
     </div>
   </section>
 
   <!-- PROJECTS -->
   <section id="projects" class="projects">
     <div class="container">
-      <h2 class="section-title">Мои проекты</h2>
-
+      <h2 class="section-title">Projects Showcase</h2>
       <div class="grid">
         <div class="project-card">
-          <img src="assets/img/project1.jpg" alt="Проект 1">
-          <h3>Landing SaaS</h3>
-          <p>Современный лендинг с анимациями, адаптивом и формой заявок.</p>
+          <img src="assets/img/project1.jpg" alt="Project 1">
+          <h3>Interactive Dashboard</h3>
+          <p>Dynamic analytics dashboard with smooth transitions and modern UI.</p>
         </div>
-
         <div class="project-card">
-          <img src="assets/img/project2.jpg" alt="Проект 2">
-          <h3>Portfolio Website</h3>
-          <p>Минималистичный сайт с чистой типографикой и структурой.</p>
+          <img src="assets/img/project2.jpg" alt="Project 2">
+          <h3>E-commerce Platform</h3>
+          <p>Responsive e-commerce site with animated product cards and dark mode support.</p>
         </div>
-
         <div class="project-card">
-          <img src="assets/img/project3.jpg" alt="Проект 3">
-          <h3>Coffee Shop Site</h3>
-          <p>Тёплый дизайн, акцент на визуале и пользовательском опыте.</p>
+          <img src="assets/img/project3.jpg" alt="Project 3">
+          <h3>Portfolio Redesign</h3>
+          <p>Minimalistic portfolio with glassmorphism elements and hover effects.</p>
         </div>
       </div>
-
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section id="about" class="about">
+  <!-- SKILLS -->
+  <section id="skills" class="skills">
     <div class="container">
-      <h2 class="section-title">Обо мне</h2>
-      <p>Я начинающий фронтенд-разработчик, создаю чистые современные интерфейсы, уделяю внимание деталям, анимации и удобству пользователя. Работаю с HTML, CSS, JavaScript.</p>
+      <h2 class="section-title">My Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-card">HTML & CSS</div>
+        <div class="skill-card">JavaScript</div>
+        <div class="skill-card">React</div>
+        <div class="skill-card">UI/UX Design</div>
+        <div class="skill-card">Animations & Transitions</div>
+        <div class="skill-card">Responsive Design</div>
+      </div>
     </div>
   </section>
 
   <!-- CONTACT -->
   <section id="contact" class="contact">
     <div class="container">
-      <h2 class="section-title">Связаться со мной</h2>
+      <h2 class="section-title">Get in Touch</h2>
       <form class="contact-form">
-        <input type="text" placeholder="Ваше имя" required>
+        <input type="text" placeholder="Your Name" required>
         <input type="email" placeholder="Email" required>
-        <textarea placeholder="Сообщение" required></textarea>
-        <button type="submit" class="btn">Отправить</button>
+        <textarea placeholder="Message" required></textarea>
+        <button type="submit" class="btn">Send Message</button>
       </form>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer class="footer">
-    <p>© 2025. Сделано мной :)</p>
+    <p>© 2025 Alex Dev. All rights reserved.</p>
   </footer>
 
 </body>
