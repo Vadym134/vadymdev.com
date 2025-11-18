@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Premium Product — Headphones X</title>
+    <link rel="stylesheet" href="ex3fd.css" />
+</head>
+<body>
+
+<header class="nav">
+    <div class="logo">BrandX</div>
+    <nav>
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#specs">Specs</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero" id="hero">
+    <div class="hero-text">
+        <h1>Headphones X<br>Redefined Sound.</h1>
+        <p>Immerse into studio-level clarity with active noise cancellation, ultra-soft ear cushions, and a futuristic acoustic design.</p>
+        <div class="price">$199</div>
+        <button class="cta">Add to Cart</button>
+    </div>
+    <div class="hero-img">
+        <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90" alt="Product">
+        <span class="tag">Best Seller</span>
+    </div>
+</section>
+
+<section class="features" id="features">
+    <h2>Powerful Features</h2>
+    <p class="subtitle">Engineered with precision. Designed for comfort.</p>
+
+    <div class="features-grid">
+        <div class="feature-card">
+            <div class="icon">🎧</div>
+            <h3>Ultra HD Sound</h3>
+            <p>Engineered with dual-layer composite drivers for unmatched clarity.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="icon">🔋</div>
+            <h3>48h Battery Life</h3>
+            <p>Long sessions, zero interruptions — perfect for travel and work.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="icon">🧠</div>
+            <h3>Smart Noise Canceling</h3>
+            <p>Adaptive ANC adjusts in real time to your environment.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="icon">🌐</div>
+            <h3>Bluetooth 5.3</h3>
+            <p>Next-gen connectivity with ultra-low latency.</p>
+        </div>
+    </div>
+</section>
+
+<section class="specs" id="specs">
+    <h2>Technical Specifications</h2>
+
+    <div class="specs-container">
+        <div class="spec-column">
+            <h4>General</h4>
+            <ul>
+                <li>Weight: 245g</li>
+                <li>Material: Alloy + SoftTouch</li>
+                <li>Charging: USB-C FastCharge</li>
+                <li>Warranty: 24 months</li>
+            </ul>
+        </div>
+
+        <div class="spec-column">
+            <h4>Audio</h4>
+            <ul>
+                <li>Frequency Response: 20Hz–40kHz</li>
+                <li>Drivers: 45mm Dual-Layer</li>
+                <li>Noise Canceling: Adaptive ANC Pro</li>
+                <li>Microphones: 4 (ENC)</li>
+            </ul>
+        </div>
+
+        <div class="spec-column">
+            <h4>Battery</h4>
+            <ul>
+                <li>Playback: 48h</li>
+                <li>Fast Charge: 10m → 6h</li>
+                <li>Wireless Charging: Yes</li>
+                <li>Standby: 120h</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="gallery">
+    <h2>Gallery</h2>
+    <p class="subtitle">A closer look at the design.</p>
+
+    <div class="grid">
+        <img src="https://images.unsplash.com/photo-1590650046871-92c887180603" alt="">
+        <img src="https://images.unsplash.com/photo-1585386959984-a4155223f3af" alt="">
+        <img src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b" alt="">
+        <img src="https://images.unsplash.com/photo-1518445693833-59df79b9331e" alt="">
+    </div>
+</section>
+
+<section class="reviews" id="reviews">
+    <h2>User Reviews</h2>
+
+    <div class="review-list">
+        <div class="review">
+            <div class="avatar"></div>
+            <div class="content">
+                <h3>Adam R.</h3>
+                <p>“Absolutely stunning. The noise cancellation is unreal — feels like a personal studio.”</p>
+            </div>
+        </div>
+
+        <div class="review">
+            <div class="avatar"></div>
+            <div class="content">
+                <h3>Michelle L.</h3>
+                <p>“Super lightweight and the sound quality is just insane. Best purchase I’ve made.”</p>
+            </div>
+        </div>
+
+        <div class="review">
+            <div class="avatar"></div>
+            <div class="content">
+                <h3>David K.</h3>
+                <p>“48h battery is no joke. Week-long travel and didn’t need to recharge once.”</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta-section">
+    <h2>Own the Future of Sound</h2>
+    <p>Premium engineering. Zero compromises.</p>
+    <button class="cta big">Buy Now — $199</button>
+</section>
+
+<footer>
+    <p>© 2025 BrandX — Crafted with passion.</p>
+</footer>
+
+<script>
+    document.addEventListener("scroll", () => {
+        const nav = document.querySelector(".nav");
+        nav.classList.toggle("scrolled", window.scrollY > 50);
+    });
+
+    const imgs = document.querySelectorAll(".grid img");
+    imgs.forEach(img => {
+        img.addEventListener("mousemove", e => {
+            const rect = img.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            img.style.transformOrigin = `${x}px ${y}px`;
+            img.style.transform = "scale(1.3)";
+        });
+        img.addEventListener("mouseleave", () => {
+            img.style.transform = "scale(1)";
+        });
+    });
+</script>
+
+</body>
+</html>
