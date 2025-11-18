@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ultimate Animated Menu</title>
+  <link rel="stylesheet" href="ex1fd.css" />
+</head>
+<body>
+
+  <div class="cursor"></div>
+
+  <header class="header">
+    <div class="logo">A N I M E N U</div>
+
+    <div class="burger" id="burger">
+      <span></span><span></span><span></span>
+    </div>
+
+    <nav class="menu" id="menu">
+      <div class="menu-bg"></div>
+
+      <a class="nav-item" href="#" style="--i:1"><span>Home</span></a>
+      <a class="nav-item" href="#" style="--i:2"><span>Projects</span></a>
+      <a class="nav-item" href="#" style="--i:3"><span>Skills</span></a>
+      <a class="nav-item" href="#" style="--i:4"><span>Contact</span></a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1 class="title">Experience <span class="highlight">Next-Level</span> UI</h1>
+    <p class="subtitle">Fast loading. Smooth animations. Premium quality.</p>
+  </section>
+
+<script>
+/* BURGER BUTTON */
+const burger = document.getElementById("burger");
+const menu = document.getElementById("menu");
+
+burger.addEventListener("click", () => {
+  burger.classList.toggle("active");
+  menu.classList.toggle("active");
+});
+
+/* MAGNETIC HOVER EFFECT */
+document.querySelectorAll(".nav-item").forEach(item => {
+  item.addEventListener("mousemove", e => {
+    const rect = item.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+
+    item.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+  });
+
+  item.addEventListener("mouseleave", () => {
+    item.style.transform = "translate(0, 0)";
+  });
+});
+
+/* CUSTOM CURSOR */
+const cursor = document.querySelector(".cursor");
+
+document.addEventListener("mousemove", (e) => {
+  cursor.style.top = `${e.clientY}px`;
+  cursor.style.left = `${e.clientX}px`;
+});
+
+/* LETTER BY LETTER FADE-IN */
+document.querySelectorAll(".nav-item span").forEach((item) => {
+  const text = item.innerText;
+  item.innerHTML = "";
+  [...text].forEach((letter, index) => {
+    item.innerHTML += `<span style="animation-delay:${index * 0.05}s">${letter}</span>`;
+  });
+});
+</script>
+
+</body>
+</html>
