@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Creative Contact Form</title>
+    <link rel="stylesheet" href="ex2fd.css" />
+</head>
+<body>
+    <div class="wrapper">
+        <div class="contact-container">
+            <div class="header">
+                <h1>Let's Build Something Amazing</h1>
+                <p>Drop me a message and I’ll get back to you as soon as possible.</p>
+            </div>
+
+            <form class="contact-form" autocomplete="off">
+                <div class="input-group">
+                    <input type="text" id="name" required />
+                    <label for="name">Your Name</label>
+                </div>
+
+                <div class="input-group">
+                    <input type="email" id="email" required />
+                    <label for="email">Email Address</label>
+                </div>
+
+                <div class="input-group">
+                    <input type="text" id="subject" required />
+                    <label for="subject">Subject</label>
+                </div>
+
+                <div class="input-group textarea">
+                    <textarea id="message" required></textarea>
+                    <label for="message">Your Message</label>
+                </div>
+
+                <button type="submit" class="send-btn">
+                    <span>Send Message</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const inputs = document.querySelectorAll(".input-group input, .input-group textarea");
+        inputs.forEach(el => {
+            el.addEventListener("focus", () => el.parentNode.classList.add("active"));
+            el.addEventListener("blur", () => {
+                if (!el.value.trim()) el.parentNode.classList.remove("active");
+            });
+        });
+    </script>
+</body>
+</html>
