@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UI/UX Modernization Showcase — Dark Theme</title>
+    <link rel="stylesheet" href="ex1ui.css" />
+</head>
+<body>
+
+<header class="nav">
+    <div class="logo">UIUpgrade</div>
+    <nav>
+        <ul>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#before-after">Before/After</a></li>
+            <li><a href="#micro">Micro-Interactions</a></li>
+            <li><a href="#final">Result</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-text">
+        <h1>Modern UI Improvements</h1>
+        <p>Showcasing how outdated, confusing, and cluttered interfaces can transform into clean, intuitive, and user-friendly experiences.</p>
+        <button class="cta">See Examples</button>
+    </div>
+</section>
+
+<section class="overview" id="overview">
+    <h2>Why UI Modernization Matters</h2>
+    <p class="subtitle">Improving interface clarity, readability, structure, and micro-interactions.</p>
+
+    <div class="overview-grid">
+        <div class="card">
+            <h3>🧭 Clear Navigation</h3>
+            <p>Better structure and layout helps users find what they need instantly.</p>
+        </div>
+        <div class="card">
+            <h3>⚡ Faster Actions</h3>
+            <p>Optimized controls reduce friction and speed up every user task.</p>
+        </div>
+        <div class="card">
+            <h3>🎨 Modern Aesthetics</h3>
+            <p>Dark theme, clean surfaces, elevated elements, and delightful UI patterns.</p>
+        </div>
+        <div class="card">
+            <h3>✨ Micro-Interactions</h3>
+            <p>Small animations create intuitive feedback and improve usability.</p>
+        </div>
+    </div>
+</section>
+
+<section class="before-after" id="before-after">
+    <h2>Before → After Redesign</h2>
+    <p class="subtitle">A real example of transforming a confusing form into a clean, effortless user experience.</p>
+
+    <div class="comparison">
+        <div class="screen before">
+            <h3>Before</h3>
+            <div class="ui-block old">
+                <div class="input old-input"></div>
+                <div class="input old-input wide"></div>
+                <div class="input old-input"></div>
+                <div class="button old-button"></div>
+            </div>
+        </div>
+
+        <div class="screen after">
+            <h3>After</h3>
+            <div class="ui-block new">
+                <div class="input-group">
+                    <label>Name</label>
+                    <input type="text" placeholder="Enter your name">
+                </div>
+                <div class="input-group">
+                    <label>Email</label>
+                    <input type="email" placeholder="your@email.com">
+                </div>
+                <div class="input-group">
+                    <label>Message</label>
+                    <textarea placeholder="Write your message"></textarea>
+                </div>
+                <button class="upgrade-btn">Send Message</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="micro" id="micro">
+    <h2>Micro-Interactions</h2>
+    <p class="subtitle">Small animations that make the interface feel alive and predictable.</p>
+
+    <div class="micro-grid">
+        <div class="micro-card hover">
+            <h3>Hover Feedback</h3>
+            <p>Buttons and cards react to user motion instantly.</p>
+        </div>
+        <div class="micro-card input">
+            <h3>Smart Inputs</h3>
+            <input type="text" placeholder="Try typing…" />
+        </div>
+        <div class="micro-card theme">
+            <h3>Dark Mode Polish</h3>
+            <p>Elegant shadows, gradients, and soft borders highlight key elements.</p>
+        </div>
+        <div class="micro-card smooth">
+            <h3>Smooth Transitions</h3>
+            <p>Every interaction feels natural with controlled easing.</p>
+        </div>
+    </div>
+</section>
+
+<section class="final" id="final">
+    <h2>The Result</h2>
+    <p>A fully modernized interface that feels premium, clear, and effortless to use.</p>
+    <a href="https://vadymdev.com/#contact" class="cta big">Let’s Modernize Your UI</a>
+</section>
+
+<footer>
+    <p>© 2025 UIUpgrade — Transforming interfaces with precision.</p>
+</footer>
+
+<script>
+    const oldInputs = document.querySelectorAll(".old-input");
+    oldInputs.forEach((el, i) => {
+        setTimeout(() => {
+            el.classList.add("pulse");
+        }, 300 * i);
+    });
+
+    document.querySelector(".cta").addEventListener("click", () => {
+        window.scrollTo({ top: document.querySelector("#overview").offsetTop - 80, behavior: "smooth" });
+    });
+</script>
+
+</body>
+</html>
