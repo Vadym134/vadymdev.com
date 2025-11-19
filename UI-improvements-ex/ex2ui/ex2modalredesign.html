@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UI Redesign Before/After</title>
+    <link rel="stylesheet" href="ex2ui.css" />
+</head>
+<body>
+
+<div id="container">
+    <div id="before">
+        <header class="old-header">My Old Website</header>
+
+        <div class="old-content">
+            <aside class="old-sidebar">
+                <h3>Menu</h3>
+                <ul>
+                    <li>Home</li>
+                    <li>Products</li>
+                    <li>Services</li>
+                    <li>Contacts</li>
+                </ul>
+            </aside>
+
+            <main class="old-main">
+                <h1>Welcome to the Old UI</h1>
+                <p>This layout represents outdated visual design and poor UX.</p>
+                <img src="https://via.placeholder.com/400x200?text=Old+Image" class="old-img" />
+                <button class="ugly-btn">Bad Button</button>
+            </main>
+        </div>
+    </div>
+
+    <div id="after">
+        <header class="new-header">Modern Website</header>
+
+        <div class="new-content">
+            <aside class="new-sidebar">
+                <h3>Navigation</h3>
+                <ul>
+                    <li>Overview</li>
+                    <li>Features</li>
+                    <li>Pricing</li>
+                    <li>Contact</li>
+                </ul>
+            </aside>
+
+            <main class="new-main">
+                <h1>Fresh Modern Design</h1>
+                <p>Clean layout, elegant colors, improved visual hierarchy and smooth experience.</p>
+                <img src="https://via.placeholder.com/400x200/ffffff/000000?text=New+Image" class="new-img" />
+                <button class="nice-btn">Premium Button</button>
+            </main>
+        </div>
+    </div>
+
+    <div id="slider">
+        <span class="label">PULL ME →</span>
+    </div>
+</div>
+
+<script>
+    const slider = document.getElementById("slider");
+    const container = document.getElementById("container");
+
+    let isDragging = false;
+
+    slider.addEventListener("mousedown", () => (isDragging = true));
+    slider.addEventListener("touchstart", () => (isDragging = true));
+
+    window.addEventListener("mouseup", () => (isDragging = false));
+    window.addEventListener("touchend", () => (isDragging = false));
+
+    window.addEventListener("mousemove", (e) => {
+        if (!isDragging) return;
+        moveSlider(e.clientX);
+    });
+
+    window.addEventListener("touchmove", (e) => {
+        if (!isDragging) return;
+        moveSlider(e.touches[0].clientX);
+    });
+
+    function moveSlider(x) {
+        const rect = container.getBoundingClientRect();
+        let offset = Math.min(Math.max(0, x - rect.left), rect.width);
+        slider.style.left = offset + "px";
+        document.documentElement.style.setProperty("--clip", offset + "px");
+    }
+</script>
+
+</body>
+</html>
