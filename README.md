@@ -27,10 +27,10 @@ The main goal of the project is to make the first impression strong, clear, and 
 - Lightweight performance-focused structure  
 
 ## 🌐 Live Demo
-Visit the website: **https://vadymdev.com**
+Visit the website: **https://vadymdev.net**
 
 ## 📂 Repository
-GitHub: **https://github.com/Vadym134/vadymdev.com**
+GitHub: **https://github.com/Vadym134/vadymdev.net**
 
 ## 📁 Project Structure
 /index.html — main page
@@ -45,7 +45,7 @@ GitHub: **https://github.com/Vadym134/vadymdev.com**
 ## 🧩 How to Run Locally
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Vadym134/vadymdev.com.git
+   git clone https://github.com/Vadym134/vadymdev.net.git
    
 2. Open index.html in your browser
 — or use a local server (e.g., VS Code Live Server) for a better experience.
@@ -63,4 +63,4 @@ Implement a small CMS-like structure for easier content updates
 ## 📬 Contact
 
 You can reach me through the contact form on the website:
-https://vadymdev.com/#contact
+https://vadymdev.net/#contact
